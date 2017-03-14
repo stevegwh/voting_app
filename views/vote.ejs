@@ -9,7 +9,7 @@
       <div class="col-md-3"><%= result[i].answer1_votes %></div>
       <div class="col-md-3"><%= result[i].answer2_votes %></div>
     </div>
-    <div class="row" id=<%= result[i].question_id %>>
+    <div class="row" id=<%= result[i]._id %>>
       <button class="answer-button col-md-3" id="answer1" name="answer1"><%= result[i].answer1 %></button>
       <button class="answer-button col-md-3" id="answer2" name="answer2"><%= result[i].answer2 %></button>
     </div>
