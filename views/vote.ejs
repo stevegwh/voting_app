@@ -1,0 +1,21 @@
+
+<% include partials/head.ejs %>
+<div class="container">
+<% for(var i = 0; i < result.length; i++) { %>
+    <div class="row">
+      <div id="question" class="col-md-6"><%= result[i].question %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"><%= result[i].answer1_votes %></div>
+      <div class="col-md-3"><%= result[i].answer2_votes %></div>
+    </div>
+    <div class="row" id=<%= result[i].question_id %>>
+      <button class="answer-button col-md-3" id="answer1" name="answer1"><%= result[i].answer1 %></button>
+      <button class="answer-button col-md-3" id="answer2" name="answer2"><%= result[i].answer2 %></button>
+    </div>
+<%}%>
+</div>
+
+<% include partials/scripts.ejs %>
+<script src="vote.js"></script>
+<% include partials/footer.ejs %>

@@ -1,0 +1,12 @@
+
+<% include partials/head.ejs %>
+
+  <form action="/submitQuestion" method="POST">
+    <input type="text" name="answer1" placeholder="Please write the first possible option">
+    <input type="text" name="answer2" placeholder="Please write the second possible option">
+    <button type="submit">Submit</button>
+  </form>
+
+
+  <% include partials/scripts.ejs %>
+  <% include partials/footer.ejs %>
