@@ -14,7 +14,11 @@
     "body-parser": "^1.17.1",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "grant-express": "^3.7.1",
     "mongod": "^2.0.0",
-    "mongodb": "^2.2.24"
+    "mongodb": "^2.2.24",
+    "morgan": "^1.8.1",
+    "purest": "^3.0.1"
   }
 }
