@@ -18,8 +18,11 @@
         </div>
         <div class="nav navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-          <li id="vote">
-            <a href="/vote">Grudge Matches</a>
+          <li id="all_matches">
+            <a href="/all_matches">See All Matches</a>
+          </li>
+          <li id="random">
+            <a href="/random">Random Match</a>
           </li>
             <% if(session.user === undefined) {%>
               <li>

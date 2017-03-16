@@ -3,6 +3,21 @@ body {
   margin-top: 100px;
 }
 
-.container {
+.match {
+  margin: 20px;
+}
+
+.steve-container {
+  margin: 0 auto;
   text-align: center;
+  width: 50%;
+}
+
+.steve-col {
+  text-align: center;
+  display: inline-block;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 2%;
+
 }

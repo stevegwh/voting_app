@@ -1,12 +1,24 @@
 
 <% include partials/head.ejs %>
-
-  <form action="/submitQuestion" method="POST">
-    <input type="text" name="answer1" placeholder="Please write the first possible option">
-    <input type="text" name="answer2" placeholder="Please write the second possible option">
-    <button type="submit">Submit</button>
-  </form>
-
+<% if(session.user !== undefined) {%>
+  <div class="steve-container well well-sm">
+    <div class="steve-row">
+        <div class="steve-col">
+            <h1>Enter your options below!</h1>
+        </div>
+    </div>
+    <div class="steve-row">
+      <form action="/submitQuestion" method="POST">
+        <input class="steve-col" type="text" name="answer1" placeholder="First option">
+        <input class="steve-col" type="text" name="answer2" placeholder="Second option">
+        <br>
+        <button class="steve-col btn btn-success" type="submit">Submit</button>
+      </form>
+    </div>
+</div>
+<% } else { %>
+  <div>Sorry! Please <a href="/login">login</a> first to create a new grudge match!</div>
+<%}%>
 
   <% include partials/scripts.ejs %>
   <% include partials/footer.ejs %>

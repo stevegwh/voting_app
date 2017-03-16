@@ -19,4 +19,27 @@ $(document).ready(function() {
 
   })
 
+  $('#tweetIt').click(function(){
+    console.log('click');
+    let tweetText = $('#tweetText').html();
+    window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweetText));
+  })
+
+  $('.deleteMatch').on('click', function () {
+    let _id = $(this).parent().attr("id");
+
+    fetch('deleteMatch', {
+      method: 'delete',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        '_id': _id,
+      })
+    }).then(res => {
+      if (res.ok) return res.json()
+    }) .then(data => {
+        window.location.reload()
+      })
+
+  })
+
 })
