@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-
   $('.answer-button').on('click', function () {
     let _id = $(this).parent().attr("id");
     let question_vote = $(this).attr('id') + "_votes";

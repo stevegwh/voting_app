@@ -11,12 +11,15 @@
       <div class="col-md-3"><%= result[i].answer2_votes %></div>
     </div>
     <div class="row" id=<%= result[i]._id %>>
-      <button class="answer-button col-md-3" id="answer1" name="answer1"><%= result[i].answer1 %></button>
-      <button class="answer-button col-md-3" id="answer2" name="answer2"><%= result[i].answer2 %></button>
+      <div class="answer-button col-md-3" style="border-style: solid"  id="answer1" name="answer1"><%= result[i].answer1 %></div>
+      <div class="answer-button col-md-3" style="border-style: solid" id="answer2" name="answer2"><%= result[i].answer2 %></div>
+    </div>
+    <div class="row">
+      <div id='tweetText' style="display: none"><%= result[i].question %> Answer here!</div>
+      <div id='tweetIt' class='btn-info col-md-2'>Tweet this!</div>
     </div>
 <%}%>
 </div>
-
+<script src="tweetit.js"></script>
 <% include partials/scripts.ejs %>
-<script src="vote.js"></script>
 <% include partials/footer.ejs %>

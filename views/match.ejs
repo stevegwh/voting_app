@@ -1,0 +1,19 @@
+
+<% include partials/head.ejs %>
+
+<div class="container">
+    <div class="row">
+      <div id="question" class="col-md-6"><%= result.question %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"><%= result.answer1_votes %></div>
+      <div class="col-md-3"><%= result.answer2_votes %></div>
+    </div>
+    <div class="row" id=<%= result._id %>>
+      <div class="answer-button col-md-3 btn btn-primary" id="answer1" name="answer1"><%= result.answer1 %></div>
+      <div class="answer-button col-md-3 btn btn-primary" id="answer2" name="answer2"><%= result.answer2 %></div>
+    </div>
+</div>
+ <% include partials/scripts.ejs %>
+ <script src="vote.js"></script>
+<% include partials/footer.ejs %>
