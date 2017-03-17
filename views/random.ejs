@@ -1,6 +1,6 @@
 
 <% include partials/head.ejs %>
-
+<% if(!noMoreMatches) { %>
 <div class="steve-container">
   <div class="match well well-sm">
     <div class="steve-row">
@@ -13,7 +13,7 @@
       <div class="steve-col"><h3><%= result.answer1_votes %></h3></div>
       <div class="steve-col"><h3><%= result.answer2_votes %></h3></div>
     </div>
-    <div class="steve-row" id=<%= result._id %>>
+    <div class="steve-row" id=<%= result._id %> onclick="<%=clickhandler%>">
       <button class="answer-button steve-col" id="answer1" name="answer1"><%= result.answer1 %></button>
       <button class="answer-button steve-col" id="answer2" name="answer2"><%= result.answer2 %></button>
     </div>
@@ -27,6 +27,9 @@
   <hr>
   <div class="steve-col btn btn-xs btn-success" onclick="window.location.reload()">New Random Match</div>
 </div>
+<% } else { %>
+  No more matches!
+  <% } %>
 
 <% include partials/scripts.ejs %>
 <script src="vote.js"></script>
