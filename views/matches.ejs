@@ -1,7 +1,7 @@
 <% include partials/head.ejs %>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<% if(session.user !== undefined || page === "single_match") {%>
 <div class="steve-container">
+<% if(session.user !== undefined || page === "single_match") {%>
   <% if(page === "my_matches") {%>
     <h3>Below are your grudge matches!<h3>
   <%}%>
@@ -34,8 +34,8 @@
   </div>
   <hr>
 <%}%>
-</div>
 <% } else { %>
   <div><h2>Sorry! Please <a href="/login">login</a> first to create a new grudge match!</h2></div>
 <%}%>
+</div>
 <% include partials/footer.ejs %>
