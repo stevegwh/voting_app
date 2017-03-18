@@ -1,15 +1,16 @@
-
 <% include partials/head.ejs %>
-<div id="user" style="display: none"><%= session.user %></div>
+<% if(session.user !== undefined || page === "all_matches") {%>
 <div class="steve-container">
 <% for(var i = 0; i < result.length; i++) { %>
   <div class="match well well-sm">
     <div class="steve-row">
       <div id="question" class="steve-col"><h1><%= result[i].question %></h1></div>
     </div>
+    <% if(page === "all_matches") {%>
     <div class="steve-row">
       <div id="question" class="steve-col"><p>By <%= result[i].user %></p></div>
     </div>
+    <% } %>
     <div class="steve-row">
       <div class="steve-col"><h3><%= result[i].answer1_votes %></h3></div>
       <div class="steve-col"><h3><%= result[i].answer2_votes %></h3></div>
@@ -19,14 +20,20 @@
       <div class="btn btn-default steve-col answer-button" id="answer2" name="answer2"><%= result[i].answer2 %></div>
     </div>
     <div class="steve-row" id=<%= result[i]._id %>>
-      <div class='tweetIt btn btn-sm btn-info'>Tweet this!
-        <div style="display:none"><%= result[i].question %> Answer here! http://dummy.com:3000/match<%= result[i]._id %></div>
-      </div>
+      <% if(page === "my_matches") {%>
+      <div class="deleteMatch btn btn-sm btn-primary">Delete this match</div>
+      <% } %>
+      <% include partials/twitter_button.ejs %>
     </div>
   </div>
   <hr>
 <%}%>
 </div>
-<script src="vote.js"></script>
+<% } else { %>
+  <div><h2>Sorry! Please <a href="/login">login</a> first to create a new grudge match!</h2></div>
+<%}%>
 <% include partials/scripts.ejs %>
+<% if(page === "all_matches") {%>
+<script src="vote.js"></script>
+<% } %>
 <% include partials/footer.ejs %>
