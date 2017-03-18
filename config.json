@@ -1,7 +1,7 @@
 {
   "server": {
     "protocol": "http",
-    "host": "dummy.com:3000"
+    "host": "fccvotingappfcc.herokuapp.com"
   },
   "twitter": {
     "key": "FTKhmoSFzbyPaQCZuaJNVMfKK",
