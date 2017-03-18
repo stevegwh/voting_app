@@ -1,0 +1,37 @@
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      <% for(let i = 0; i < result.length; i++) { %>
+      function drawChart() {
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Option');
+        data.addColumn('number', 'Votes');
+        <% for(let x = 1; x < Object.keys(result[i].options).length + 1; x++) { %>
+        data.addRows([
+          ["<%= result[i].options['answer' + x].option %>", <%= result[i].options['answer' + x].votes %>]
+        ]);
+        <%}%>
+
+        // Set chart options
+        var options = {'title': "",
+                       'width':450,
+                       'height':300,
+                       'is3D': true,
+                       'backgroundColor': '#F0F0F0'};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById("chart_div<%= result[i]._id %>"));
+        chart.draw(data, options);
+
+      }
+      <% } %>
+  </script>

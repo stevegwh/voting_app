@@ -1,28 +1,33 @@
 <% include partials/head.ejs %>
-<% if(session.user !== undefined || page === "all_matches") {%>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<% if(session.user !== undefined || page === "single_match") {%>
 <div class="steve-container">
+  <% if(page === "my_matches") {%>
+    <h3>Below are your grudge matches!<h3>
+  <%}%>
 <% for(var i = 0; i < result.length; i++) { %>
   <div class="match well well-sm">
     <div class="steve-row">
       <div id="question" class="steve-col"><h1><%= result[i].question %></h1></div>
     </div>
-    <% if(page === "all_matches") {%>
+    <% if(page === "single_match") {%>
     <div class="steve-row">
       <div id="question" class="steve-col"><p>By <%= result[i].user %></p></div>
     </div>
-    <% } %>
     <div class="steve-row">
-      <div class="steve-col"><h3><%= result[i].answer1_votes %></h3></div>
-      <div class="steve-col"><h3><%= result[i].answer2_votes %></h3></div>
+      <% include partials/get-stats.ejs %>
+      <div id="chart_div<%=result[i]._id%>" class="steve-col"></div>
     </div>
+    <% } %>
     <div class="steve-row"  id=<%= result[i]._id %>>
-      <!-- Make all questions load -->
-      <div class="btn btn-default steve-col answer-button" id="answer1" name="answer1"><%= result[i].answer1 %></div>
-      <div class="btn btn-default steve-col answer-button" id="answer2" name="answer2"><%= result[i].answer2 %></div>
+      <% for(let x = 1; x < Object.keys(result[i].options).length + 1; x++) { %>
+      <div class="btn btn-default steve-col answer-button" id="<%= Object.getOwnPropertyNames(result[i].options)[x-1]%>" name="<%= Object.getOwnPropertyNames(result[i].options)[x-1]%>"><%= result[i].options["answer" + x].option %></div>
+      <%}%>
     </div>
     <div class="steve-row" id=<%= result[i]._id %>>
       <% if(page === "my_matches") {%>
       <div class="deleteMatch btn btn-sm btn-primary">Delete this match</div>
+      <div class="get-stats btn btn-sm btn-sm btn-success">See Votes</div>
       <% } %>
       <% include partials/twitter_button.ejs %>
     </div>
@@ -33,8 +38,4 @@
 <% } else { %>
   <div><h2>Sorry! Please <a href="/login">login</a> first to create a new grudge match!</h2></div>
 <%}%>
-<% include partials/scripts.ejs %>
-<% if(page === "all_matches") {%>
-<script src="vote.js"></script>
-<% } %>
 <% include partials/footer.ejs %>

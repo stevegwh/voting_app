@@ -1,27 +1,25 @@
 $(document).ready(function() {
 
   $('.answer-button').on('click', function () {
-    let _id = $(this).parent().attr("id");
-    let question_vote = $(this).attr('id') + "_votes";
-    let answer = $(this).attr('id');
-    let user = $('#user').text()
-    console.log(user);
-    fetch('submitVote', {
-      method: 'put',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        '_id': _id,
-        'questionToUpdate': question_vote,
-        'user': user,
-        'answer': answer
+    var pathname = window.location.pathname;
+    if(pathname !== "/my_matches") {
+      let _id = $(this).parent().attr("id");
+      let votedFor = $(this).attr('id');
+      fetch('submitVote', {
+        method: 'put',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          '_id': _id,
+          'votedFor': votedFor
+        })
+      }).then(res => {
+        if (res.ok) {
+          window.location.reload()
+        } else {
+          alert("You have already voted on this poll")
+        }
       })
-    }).then(res => {
-      if (res.ok) {
-        window.location.reload()
-      } else {
-        alert("You have already voted for that")
-      }
-    })
+    }
   })
 
   $('.tweetIt').click(function(){
@@ -44,6 +42,11 @@ $(document).ready(function() {
         window.location.reload()
       })
 
+  })
+
+  $('.get-stats').on('click', function(){
+    let _id = $(this).parent().attr("id");
+    window.location.assign("/match" + _id);
   })
 
 })

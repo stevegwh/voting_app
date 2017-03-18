@@ -1,0 +1,15 @@
+<% include partials/head.ejs %>
+<div class="steve-container">
+<% for(var i = 0; i < result.length; i++) { %>
+  <div class="match well well-sm">
+    <div class="steve-row">
+      <a href="match<%=result[i]._id%>"><div class="steve-col"><h1><%= result[i].question %></h1></div></a>
+    </div>
+    <div class="steve-row">
+      <div class="steve-col"><p>By <%= result[i].user %></p></div>
+    </div>
+  </div>
+  <hr>
+<%}%>
+</div>
+<% include partials/footer.ejs %>
