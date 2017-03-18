@@ -9,16 +9,22 @@
     </div>
     <div class="steve-row">
       <form action="/submitQuestion" method="POST">
-        <input class="steve-col" type="text" name="answer1" placeholder="First option">
-        <input class="steve-col" type="text" name="answer2" placeholder="Second option">
-        <br>
+        <input class="steve-col" type="text" name="question" placeholder="Enter your question">
+        <div id="options">
+          <div>
+            <input class="steve-col" type="text" name="answer1" placeholder="Option">
+            <div class=" btn btn-danger btn-xs remove-option">X</div>
+          </div>
+        </div>
         <button class="steve-col btn btn-success" type="submit">Submit</button>
+        <div id="add-option" class="steve-col btn btn-info">Add Option</div>
       </form>
+
     </div>
 </div>
 <% } else { %>
   <div><h2>Sorry! Please <a href="/login">login</a> first to create a new grudge match!</h2></div>
 <%}%>
-
   <% include partials/scripts.ejs %>
+  <script src="create_match.js"></script>
   <% include partials/footer.ejs %>
