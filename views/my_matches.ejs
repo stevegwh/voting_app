@@ -17,9 +17,10 @@
     </div>
     <div class="steve-row" id=<%= result[i]._id %>>
       <div class="deleteMatch btn btn-sm btn-primary">Delete this match</div>
-      <div id='tweetIt' class='btn btn-sm btn-info'>Tweet this!</div>
+      <div class='tweetIt btn btn-sm btn-info'>Tweet this!
+        <div style="display:none"><%= result[i].question %> Answer here! http://dummy.com:3000/match<%= result[i]._id %></div>
+      </div>
     </div>
-    <div id='tweetText' style="display: none"><%= result[i].question %> Answer here! http://dummy.com:3000/match<%= result[i]._id %></div>
   </div>
   <hr>
 <%}%>
