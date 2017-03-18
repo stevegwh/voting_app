@@ -8,7 +8,7 @@ $(document).ready(function(){
 
       $('#options').append('\
       <div>\
-        <input class="steve-col" type="text" name="answer'+ count +'" placeholder="Option">\
+        <input class="steve-col" maxlength="25" type="text" name="answer'+ count +'" placeholder="Option" required>\
         <div class=" btn btn-danger btn-xs remove-option">X</div>\
       </div>');
     } else {
@@ -26,4 +26,14 @@ $(document).ready(function(){
     });
 
   });
+
+  function validateForm() {
+    var x = document.forms["match-submit"]["question"].value;
+    var y = document.forms["match-submit"]["answer1"].value;
+    var z = document.forms["match-submit"]["answer2"].value;
+    if (x == "" || y == "" || z == "") {
+        alert("Please leave nothing blank");
+        return false;
+    }
+}
 })
