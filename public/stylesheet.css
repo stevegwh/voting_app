@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Pacifico|Rajdhani');
 @media only screen and (min-device-width: 800px) {
   /* Hover only on PC, disabled for iPad */
     .headerRow:hover {box-shadow:2px 2px 2px #666;background: #c0c0c0;
@@ -13,16 +14,34 @@
 
 body {
   margin-top: 100px;
+  background-color: #E9F4F7;
+}
+a {
+  color: royalblue;
+}
+h1 {
+
+    font-family: 'lato', sans-serif;
+}
+.navbar {
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #0F0F0F;
+  color: black;
+}
+.welcome {
+  font-family: 'Pacifico',cursive;
+  padding-bottom: 2vmax;
+}
+
+.well {
+  background: #FAFAFA;
+  border-radius: 10px;
 }
 
 .jumbotron {
   background-color: royalblue;
   color: white;
   text-shadow: 1px 1px 2px #0F0F0F;
-}
-
-.btn {
-
 }
 
 .match {
@@ -32,7 +51,7 @@ body {
 .steve-container {
   margin: 0 auto;
   text-align: center;
-  width: 50%;
+  width: 75%;
 }
 
 .container {
