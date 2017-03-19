@@ -22,7 +22,7 @@
     <% } %>
     <div class="steve-row"  id=<%= result[i]._id %>>
       <% for(let x = 0; x < result[i].options.length; x++) { %>
-      <div class="btn btn-default steve-col answer-button" id="<%=result[i].options[x].answer%>" name="<%=result[i].options[x].answer%>"><%= result[i].options[x].option %></div>
+      <div class="btn btn-default steve-col answer-button" onclick="void(0);" style="cursor:pointer;" id="<%=result[i].options[x].answer%>" name="<%=result[i].options[x].answer%>"><%= result[i].options[x].option %></div>
       <%}%>
     </div>
     <div class="steve-row" id=<%= result[i]._id %>>
