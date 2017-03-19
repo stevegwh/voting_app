@@ -1,22 +1,23 @@
 
 <% include partials/head.ejs %>
 <% if(session.user !== undefined) {%>
+  <% if(page === "edit_match") { %>
   <div class="steve-container well well-sm">
     <div class="steve-row">
         <div class="steve-col">
-            <h1>Enter your options below!</h1>
+              <h1>Edit your match below!</h1>
         </div>
     </div>
     <div class="steve-row">
-      <form name="match-submit" action="/submitQuestion" method="POST">
-        <input class="steve-col" maxlength="50" type="text" name="question" placeholder="Enter your question" required>
+      <form name="match-submit" action="/editMatch" method="POST">
+        <div class="steve-col"><h4><%= result.question %><h4></div>
+        <input class="steve-col" maxlength="50" type="text" name="_id" value="<%= result._id %>" style="display: none">
         <div id="options">
+          <% for(let x = 0; x < result.options.length; x++) { %>
           <div>
-            <input class="steve-col" maxlength="35" type="text" name="answer1" placeholder="Option" required>
+            <input class="steve-col" maxlength="35" type="text" disabled="disabled" name="<%=result.options[x].answer%>" value="<%= result.options[x].option %>" style="opacity: 0.5" readonly>
           </div>
-          <div>
-            <input class="steve-col" maxlength="35" type="text" name="answer2" placeholder="Option" required>
-          </div>
+          <%}%>
         </div>
         <div id="add-option" class="steve-col btn btn-info">Add Option</div>
         <button class="steve-col btn btn-success" type="submit" value="Submit">Submit</button>
@@ -24,6 +25,33 @@
 
     </div>
 </div>
+
+
+<%} else {%>
+<div class="steve-container well well-sm">
+  <div class="steve-row">
+      <div class="steve-col">
+          <h1>Enter your match below!</h1>
+      </div>
+  </div>
+  <div class="steve-row">
+    <form name="match-submit" action="/submitMatch" method="POST">
+      <input class="steve-col" maxlength="50" type="text" name="question" placeholder="Enter your question" required>
+      <div id="options">
+        <div>
+          <input class="steve-col" maxlength="35" type="text" name="answer1" placeholder="Option" required>
+        </div>
+        <div>
+          <input class="steve-col" maxlength="35" type="text" name="answer2" placeholder="Option" required>
+        </div>
+      </div>
+      <div id="add-option" class="steve-col btn btn-info">Add Option</div>
+      <button class="steve-col btn btn-success" type="submit" value="Submit">Submit</button>
+    </form>
+
+  </div>
+</div>
+<%}%>
 <% } else { %>
   <div><h2>Sorry! Please <a href="/login">login</a> first to create a new grudge match!</h2></div>
 <%}%>

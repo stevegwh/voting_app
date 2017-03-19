@@ -5,6 +5,7 @@ $(document).ready(function() {
     if(pathname !== "/my_matches") {
       let _id = $(this).parent().attr("id");
       let votedFor = $(this).attr('id');
+      votedFor = votedFor.match(/\d+/)[0]
       fetch('submitVote', {
         method: 'put',
         headers: {'Content-Type': 'application/json'},
@@ -47,6 +48,11 @@ $(document).ready(function() {
   $('.get-stats').on('click', function(){
     let _id = $(this).parent().attr("id");
     window.location.assign("/match" + _id);
+  })
+
+  $('.edit-match').on('click', function(){
+    let _id = $(this).parent().attr("id");
+    window.location.assign("/edit_match" + _id);
   })
 
   const colors = ['azure', 'snow', 'thistle', 'palegoldenrod'];

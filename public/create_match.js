@@ -1,11 +1,11 @@
 $(document).ready(function(){
+  let pathname = window.location.pathname;
+
   $('#add-option').on('click', function(){
     let options = $('#options').children().length;
     let count = options + 1;
     console.log($('#options').children())
     if(options < 5) {
-
-
       $('#options').append('\
       <div>\
         <input class="steve-col" maxlength="35" type="text" name="answer'+ count +'" placeholder="Option" required>\
@@ -26,5 +26,12 @@ $(document).ready(function(){
     });
 
   });
+  pathname = pathname.split(/[0-9]/)[0];
+  if(pathname === "/edit_match") {
+    let options = $('#options').children().length;
+    let count = 1;
+    $('input', $('#options')).each(function () {
+    });
+  }
 
 })

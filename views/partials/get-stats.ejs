@@ -15,9 +15,9 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Option');
         data.addColumn('number', 'Votes');
-        <% for(let x = 1; x < Object.keys(result[i].options).length + 1; x++) { %>
+        <% for(let x = 0; x < result[i].options.length; x++) { %>
         data.addRows([
-          ["<%= result[i].options['answer' + x].option %>", <%= result[i].options['answer' + x].votes %>]
+          ["<%= result[i].options[x].option %>", <%= result[i].options[x].votes %>]
         ]);
         <%}%>
 

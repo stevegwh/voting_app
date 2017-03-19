@@ -1,11 +1,11 @@
 {
   "server": {
     "protocol": "http",
-    "host": "fccvotingappfcc.herokuapp.com"
+    "host": "dummy.com:3000"
   },
   "twitter": {
-    "key": "FTKhmoSFzbyPaQCZuaJNVMfKK",
-    "secret": "qfKoNx30WcMoVA1S8ls73iYHa5ggpJTagIB9xT1AfCXKkBpEGM",
+    "key": "oC1vfUm8YDxIGr2TGLldAa08c",
+    "secret": "fNtWSHcNOdwqxjgbXpB0CLt6XM0ere7SysaTh2OVn3NMrfuCtu",
     "callback": "/handle_twitter_callback"
   }
 }

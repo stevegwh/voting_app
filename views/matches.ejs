@@ -21,16 +21,17 @@
     </div>
     <% } %>
     <div class="steve-row"  id=<%= result[i]._id %>>
-      <% for(let x = 1; x < Object.keys(result[i].options).length + 1; x++) { %>
-      <div class="btn btn-default steve-col answer-button" id="<%= Object.getOwnPropertyNames(result[i].options)[x-1]%>" name="<%= Object.getOwnPropertyNames(result[i].options)[x-1]%>"><%= result[i].options["answer" + x].option %></div>
+      <% for(let x = 0; x < result[i].options.length; x++) { %>
+      <div class="btn btn-default steve-col answer-button" id="<%=result[i].options[x].answer%>" name="<%=result[i].options[x].answer%>"><%= result[i].options[x].option %></div>
       <%}%>
     </div>
     <div class="steve-row" id=<%= result[i]._id %>>
       <% if(page === "my_matches") {%>
       <div class="deleteMatch btn btn-sm btn-primary">Delete this match</div>
       <div class="get-stats btn btn-sm btn-sm btn-success">See Votes</div>
+      <div class="edit-match btn btn-sm btn-sm btn-warning">Edit Match</div>
       <% } %>
-      <% include partials/twitter_button.ejs %>
+      <% include partials/twitter-button.ejs %>
     </div>
   </div>
   <hr>
