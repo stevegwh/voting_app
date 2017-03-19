@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
   $(document).on("click touchstart", ".answer-button", function () {
     var pathname = window.location.pathname;
     if(pathname !== "/my_matches") {
@@ -7,7 +8,7 @@ $(document).ready(function() {
       let votedFor = $(this).attr('id');
       votedFor = votedFor.match(/\d+/)[0]
       fetch('submitVote', {
-        method: 'put',
+        method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           '_id': _id,
