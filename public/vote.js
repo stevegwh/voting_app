@@ -49,4 +49,19 @@ $(document).ready(function() {
     window.location.assign("/match" + _id);
   })
 
+  const colors = ['azure', 'snow', 'thistle', 'palegoldenrod'];
+  let count = 0;
+  $('.match').each(function () {
+      if(count % 2 === 0) {
+        $(this).css('background', colors[0]);
+      } else {
+        $(this).css('background', colors[1]);
+      }
+      if(count <= colors.length) {
+        count++
+      } else {
+        count = 0;
+      }
+  });
+
 })

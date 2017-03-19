@@ -2,6 +2,16 @@ body {
   margin-top: 100px;
 }
 
+.jumbotron {
+  background-color: royalblue;
+  color: white;
+  text-shadow: 1px 1px 2px #0F0F0F;
+}
+
+.btn {
+
+}
+
 .match {
   margin: 20px;
 }

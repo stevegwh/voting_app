@@ -17,18 +17,38 @@
         <a class="navbar-brand" href="/">Grudge Match</a>
         </div>
         <div class="nav navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-left">
           <li id="all_matches">
             <a href="/match_list">See All Matches</a>
           </li>
-            <% if(session.user === undefined) {%>
-              <li>
-                <a href="/login">Login</a>
-              </li>
-            <% } else { %>
-            <% include loginbar.ejs %>
-            <% } %>
+          <% if(session.user !== undefined) {%>
+          <li id="my_matches">
+            <a href="/my_matches">
+              My Matches
+            </a>
+          </li>
+          <li id="create_match">
+            <a href="/create_match">
+              Create a Match
+            </a>
+          </li>
+          <% } %>
           </ul>
+          <div class="nav navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <% if(session.user === undefined) {%>
+                <li>
+                  <a href="/login">Login</a>
+                </li>
+              <% } else { %>
+                <li>
+                  <a href="/logout">Logout</a>
+                </li>
+                <li class="hidden-xs">
+                    <a><%= session.user %></a>
+                </li>
+              <% } %>
+            </ul>
       </div>
     </div>
   </nav>
