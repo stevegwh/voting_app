@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
   $(document).on("click touchstart", ".answer-button", function () {
     var pathname = window.location.pathname;
     if(pathname !== "/my_matches") {
@@ -14,7 +13,7 @@ $(document).ready(function() {
           '_id': _id,
           'votedFor': votedFor
         })
-      }).then(res => {
+      }).then(function(res) {
         if (res.ok) {
           window.location.reload()
         } else {
@@ -41,9 +40,9 @@ $(document).on("click touchstart", ".tweetIt", function () {
         body: JSON.stringify({
           '_id': _id,
         })
-      }).then(res => {
+      }).then(function(res) {
         if (res.ok) return res.json()
-      }) .then(data => {
+      }) .then(function(data) {
           window.location.reload()
         })
     });
