@@ -9,7 +9,7 @@ $(document).ready(function(){
       $('#options').append('\
       <div>\
         <input class="steve-col" maxlength="35" type="text" name="answer'+ count +'" placeholder="Option" required>\
-        <div class=" btn btn-danger btn-xs remove-option">X</div>\
+        <div class="remove-option"> <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></div>\
       </div>');
     } else {
       alert("Sorry, you cannot have more than " + options + " options");
