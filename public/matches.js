@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('.answer-button').on('click', function () {
+  $(document).on("click touchstart", ".answer-button", function () {
     var pathname = window.location.pathname;
     if(pathname !== "/my_matches") {
       let _id = $(this).parent().attr("id");
@@ -21,39 +21,43 @@ $(document).ready(function() {
         }
       })
     }
-  })
 
-  $('.tweetIt').click(function(){
-    let tweetText = $(this).children().text();
-    window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweetText));
-  })
+  });
 
-  $('.deleteMatch').on('click', function () {
-    let _id = $(this).parent().attr("id");
+$(document).on("click touchstart", ".tweetIt", function () {
+  let tweetText = $(this).children().text();
+  window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweetText));
 
-    fetch('deleteMatch', {
-      method: 'delete',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        '_id': _id,
-      })
-    }).then(res => {
-      if (res.ok) return res.json()
-    }) .then(data => {
-        window.location.reload()
-      })
+});
 
-  })
+  $(document).on("click touchstart", ".deleteMatch", function () {
 
-  $('.get-stats').on('click', function(){
+      let _id = $(this).parent().attr("id");
+
+      fetch('deleteMatch', {
+        method: 'delete',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          '_id': _id,
+        })
+      }).then(res => {
+        if (res.ok) return res.json()
+      }) .then(data => {
+          window.location.reload()
+        })
+    });
+
+
+  $(document).on("click touchstart", ".get-stats", function () {
     let _id = $(this).parent().attr("id");
     window.location.assign("/match" + _id);
-  })
+  });
 
-  $('.edit-match').on('click', function(){
+  $(document).on("click touchstart", ".edit-match", function () {
     let _id = $(this).parent().attr("id");
     window.location.assign("/edit_match" + _id);
-  })
+  });
+
 
   const colors = ['azure', 'snow', 'thistle', 'palegoldenrod'];
   let count = 0;
