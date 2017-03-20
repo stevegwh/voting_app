@@ -12,6 +12,10 @@
     }
 }
 
+.match-name {
+  font-size: 8vmax;
+}
+
 .chart-wrapper {
   min-height:200px;
   height: 100%;
