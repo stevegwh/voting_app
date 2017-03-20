@@ -13,21 +13,23 @@
 }
 
 .chart-wrapper {
-  min-height:400px;
+  min-height:200px;
   height: 100%;
   width: 100%;
   margin:auto;
   background:#FAFAFA;
-  text-align:center
+  text-align:center;
+  padding: 0
 }
 
 .chart {
-  min-height: 400px;
+  min-height: 200px;
   height: 100%;
   width: 100%;
   margin:auto;
   background:#FAFAFA;
-  text-align:center
+  text-align:center;
+  padding: 0;
 }
 
 body {
