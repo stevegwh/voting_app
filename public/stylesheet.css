@@ -13,7 +13,7 @@
 }
 
 .chart {
-width:100%;
+max-width:50vmax;
 min-height: 25vmax;
 }
 body {
