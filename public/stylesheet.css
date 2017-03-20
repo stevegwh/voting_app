@@ -20,7 +20,7 @@ body {
 a {
   color: royalblue;
 }
-h1 {
+.list-title {
 
     font-family: 'lato', sans-serif;
 }
@@ -52,7 +52,7 @@ h1 {
 .steve-container {
   margin: 0 auto;
   text-align: center;
-  width: 75%;
+  max-width: 75vmax;
 }
 
 .container {

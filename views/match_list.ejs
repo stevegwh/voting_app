@@ -3,7 +3,7 @@
 <% for(var i = result.length - 1; i >= 0; i--) { %>
   <div class="match well well-sm">
     <div class="steve-row">
-      <a href="match<%=result[i]._id%>"><div class="steve-col"><h1><%= result[i].question %></h1></div></a>
+      <a href="match<%=result[i]._id%>"><div class="steve-col"><h3 class="list-title"><%= result[i].question %></h3></div></a>
     </div>
     <div class="steve-row">
       <div class="steve-col"><p>By <%= result[i].name %></p></div>
