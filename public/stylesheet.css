@@ -12,9 +12,22 @@
     }
 }
 
+.chart-wrapper {
+  min-height:400px;
+  height: 100%;
+  width: 100%;
+  margin:auto;
+  background:#FAFAFA;
+  text-align:center
+}
+
 .chart {
-max-width:50vmax;
-min-height: 25vmax;
+  min-height: 400px;
+  height: 100%;
+  width: 100%;
+  margin:auto;
+  background:#FAFAFA;
+  text-align:center
 }
 
 body {

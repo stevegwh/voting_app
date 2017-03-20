@@ -23,13 +23,13 @@
 
         // Set chart options
         var options = {'title': "",
-                       'width':400,
                        'height':300,
                        'is3D': true,
-                       'backgroundColor': '#F0F0F0'};
+                       'backgroundColor': '#FAFAFA',
+                     legend: { position: "none" }};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById("chart_div<%= result[i]._id %>"));
+        var chart = new google.visualization.BarChart(document.getElementById("chart_div<%= result[i]._id %>"));
         chart.draw(data, options);
 
       }

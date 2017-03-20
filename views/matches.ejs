@@ -15,9 +15,9 @@
     <div class="steve-row">
       <div id="question" class="steve-col"><p>By <%= result[i].name %></p></div>
     </div>
-    <div class="steve-row">
+    <div class="steve-row chart-wrapper">
       <% include partials/get-stats.ejs %>
-      <div id="chart_div<%=result[i]._id%>" class="chart steve-col"></div>
+      <div id="chart_div<%=result[i]._id%>" class="chart"></div>
     </div>
     <% } %>
     <div class="steve-row"  id=<%= result[i]._id %>>
