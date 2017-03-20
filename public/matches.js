@@ -1,7 +1,13 @@
 $(document).ready(function() {
+  var pathname = window.location.pathname;
+  if(pathname !== "/my_matches") {
+  $(function(){
+   $(document).attr("title", "Grudge Match! " + $('.facebook-share').children(":first").text());
+  });
+  }
+
 
   $(document).on("click touchstart", ".answer-button", function () {
-    var pathname = window.location.pathname;
     if(pathname !== "/my_matches") {
       let _id = $(this).parent().attr("id");
       let votedFor = $(this).attr('id');
@@ -51,6 +57,12 @@ $(document).on("click touchstart", ".tweetIt", function () {
   $(document).on("click touchstart", ".get-stats", function () {
     let _id = $(this).parent().attr("id");
     window.location.assign("/match" + _id);
+  });
+
+  $(document).on("click touchstart", ".facebook-share", function () {
+    let url = $(this).children(":last").text();
+    let facebook_url =  encodeURI("https://www.facebook.com/sharer/sharer.php?u="+ url +"&t=");
+    window.open(facebook_url, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
   });
 
   $(document).on("click touchstart", ".edit-match", function () {
