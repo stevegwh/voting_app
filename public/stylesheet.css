@@ -12,6 +12,10 @@
     }
 }
 
+#chart_div {
+width:inherit;
+height:inherit;
+}
 body {
   margin-top: 100px;
   background-color: #E9F4F7;
