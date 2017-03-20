@@ -16,11 +16,13 @@
 max-width:50vmax;
 min-height: 25vmax;
 }
+
 body {
-  margin-top: 100px;
+  padding-top: 60px;
   background-color: #E9F4F7;
-  margin-bottom: 100px;
+  padding-bottom: 60px;
 }
+
 a {
   color: royalblue;
 }
@@ -35,6 +37,7 @@ a {
 }
 .welcome {
   font-family: 'Pacifico',cursive;
+  font-size: 8vmax;
   padding-bottom: 2vmax;
 }
 
