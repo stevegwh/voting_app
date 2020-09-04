@@ -18,7 +18,7 @@
     "express-session": "^1.15.1",
     "grant-express": "^3.7.1",
     "mongod": "^2.0.0",
-    "mongodb": "^2.2.24",
+    "mongodb": "^3.6.1",
     "morgan": "^1.8.1",
     "twit": "^2.2.5",
     "whatwg-fetch": "^2.0.3"
